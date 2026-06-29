@@ -7,7 +7,7 @@ CafePMNets is a multi-scale network that modelling protein-protein, module-modul
 
 # Input File Format
 
-1.	Experimental protein-protein interactions file (tab-delimited; no header)
+1.	Experimental protein-protein interactions file (tab-delimited; with header)
   - Column 1: Protein 1
   - Column 2: Protein 2
 2.	Co-expressed gene pairs file (tab-delimited; no header):
