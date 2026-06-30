@@ -50,7 +50,7 @@ python3 1-1_R2_PPIN.py –e ./Dataset/9606_expPPI_network_OnlyAC.txt –p ./Data
 `-p`: Gene co-expression file.  
 `-o`: Output file containing average $R^2$ values and edge counts for each PCC threshold.
 
-Step 1-2: Calculate the average RSS of protein-protein interaction network under different PCC thresholds.
+Step 1-2: Calculate the average RSS of PPIN under different PCC thresholds.
 
 ```bash
 python3 1-2_AvgRSS_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –p ./Dataset/COAD_PCC.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –o ./PPIN/AvgRSS_COAD_PPIN.txt
@@ -65,7 +65,7 @@ python3 1-2_AvgRSS_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –p .
 `--threshold_end`: Ending PCC threshold (default: 0.9).  
 `--threshold_step`: PCC threshold increment (default: 0.1).
 
-Step 1-3: Calculate the geometric mean scores and plotting of protein-protein interaction network under different PCC thresholds.
+Step 1-3: Calculate the geometric mean scores and plotting of PPIN under different PCC thresholds.
 
 ```bash
 python3 1-3_geometric_mean_plotting.py –r ./PPIN/R2_COAD_PPIN.txt –s ./PPIN/AvgRSS_COAD_PPIN.txt –o ./PPIN/GM_COAD_PPIN.txt
@@ -86,4 +86,75 @@ python3 1-4_construct_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –
 `-t`: PCC threshold for PPIN construction.  
 `-o`: Output PPIN file.
 
-**Step 2: Module-module interaction network construction**
+**Step 2: Module-module interaction network (MMIN) construction**
+
+The required datasets are stored in the Dataset folder, all of the example outputs are provided in the MMIN folder.
+
+Step 2-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each module-module pair.
+
+```bash
+python3 2-1_cor_expPPI_MMI_hyperP.py --mode coexpressed –m ./Dataset/ Modules.txt –n ./Dataset/COAD_PCC.txt --threshold 0.5 –o ./MMIN/coexp_MMIN_hyperP.txt
+```
+```bash
+python3 2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_ OnlyAC.txt --threshold 0.5 –o ./MMIN/expPPI_MMIN_hyperP.txt
+```
+`-help`: Get help with the commands.  
+`-m`: Module file.  
+`-n`: Interaction network file.  
+`-o`: Output file containing hypergeometric enrichment results.  
+`--mode`: Reference interaction source ("expPPI" or "coexpressed").  
+`--threshold`: Absolute PCC threshold (required for coexpressed mode).
+
+Step 2-2: Calculate the R2 of MMIN under different meta-z thresholds.
+
+```bash
+python3 2-2_R2_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coexp_MMIN_hyperP.txt –o ./MMIN/R2_COAD_MMIN.txt
+```
+`-h`: Get help with the commands.  
+`-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
+`-p`: MMI hypergeometric enrichment result file based on gene co-expression.  
+`-o`: Output file for the calculated R2 values across all meta-z thresholds (can be .txt or .csv).  
+`--threshold_start`: Starting meta-z threshold (default: 1.0).  
+`--threshold_end`: Ending meta-z threshold (default: 9.0).  
+`--threshold_step`: Meta-z threshold increment (default: 0.5).
+
+Step 2-3: Calculate the joint average RSS of MMIN under different meta-z thresholds.
+
+```bash
+python3 2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt –e ./MMIN/expPPI_MMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./MMIN/coexp_MMIN_hyperP.txt –o ./MMIN/joint_AvgRSS_COAD_MMIN.txt
+```
+`-k`: Experimental PPI file.  
+`-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
+`-b`: BP semantic similarity score file.  
+`-c`: CC semantic similarity score file.  
+`-m`: Module file.  
+`-p`: MMI hypergeometric enrichment result file based on co-expression.  
+`-o`: Output file containing joint average RSS values for each meta-z threshold (can be .txt or .csv).  
+`--threshold_start`: Starting meta-z threshold (default: 1.0).  
+`--threshold_end`: Ending meta-z threshold (default: 9.0).  
+`--threshold_step`: Meta-z threshold increment (default: 0.5).
+
+Step 2-4: Calculate the geometric mean scores and plotting of MMIN under different meta-z thresholds.
+
+```bash
+python3 2-4_geometric_mean_plotting.py –r ./MMIN/R2_COAD_MMIN.txt –s ./MMIN/joint_AvgRSS_COAD_MMIN.txt –o ./MMIN/GM_COAD_MMIN.txt
+```
+`-h`: Get help with the commands.  
+`-r`: R² result file.  
+`-s`: Average RSS result file.  
+`-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
+
+Step 2-5: Construct MMIN with assigned meta-z threshold.
+
+```bash
+python3 2-5_construct_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coexp_MMIN_hyperP.txt –t 7.5 –o ./MMIN/COAD_MMIN.txt
+```
+`-h`: Get help with the commands.  
+`-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
+`-p`: MMI hypergeometric enrichment result file based on gene co-expression.  
+`-t`: Meta-z threshold for MMIN construction.  
+`-o`: Output MMIN file.
+
+**Step 3: Protein-module interaction network (CafePMNets) construction**
+
+
