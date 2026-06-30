@@ -32,5 +32,20 @@ CafePMNets is a multi-scale network that modelling protein-protein, module-modul
 6.	Modules file (tab-delimited; with header):
   - Column 1: Module ID
   - Column 2: Number of module protein
-  - Column 3: Module protein (Uniprot AC) 
+  - Column 3: Module protein (Uniprot AC)
 
+# Basic Usage
+
+Step 1: Protein-protein interaction network (PPIN) construction
+
+The example dataset is stored in the Dataset folder, all of the example outputs are provided in the PPIN folder.
+
+Step 1-1: Calculate the R2 of PPIN under different PCC thresholds.
+
+```bash
+python3 1-1_R2_PPIN.py –e ./Dataset/9606_expPPI_network_OnlyAC.txt –p ./Dataset/COAD_PCC.txt –o ./PPIN/R2_COAD_PPIN.txt
+```
+- `h`: Get help with the commands.
+- `e`: Experimental PPI file. 
+- `p`: Gene co-expression file. 
+- `o`: Output file for the calculated R2 values across all PCC thresholds.
