@@ -153,12 +153,12 @@ python3 3-1_cor_ expPPI_PMI_hyperP.py --mode coexpressed –m ./Dataset/Modules.
 python3 3-1_cor_expPPI_ PMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_OnlyAC.txt –k ./Dataset/9606_Uniprot_Reference_Genome.txt --threshold 0.5 –o ./PMIN/expPPI_PMI_hyperP.txt
 ```
 
-`-help`: Get help with the commands.
-`-m`: Module file.
-`-n`: Interaction network file.
-`-k`: Reference genome file.
-`-o`: Output file containing hypergeometric enrichment results.
-`--mode`: Reference interaction source ("expPPI" or "coexpressed").
+`-help`: Get help with the commands.  
+`-m`: Module file.  
+`-n`: Interaction network file.  
+`-k`: Reference genome file.  
+`-o`: Output file containing hypergeometric enrichment results.  
+`--mode`: Reference interaction source ("expPPI" or "coexpressed").  
 `--threshold`: Absolute PCC threshold (required for coexpressed mode).
 
 Step 3-2: Calculate the $R^2$ of CafePMNets under different meta-z thresholds.
@@ -167,14 +167,14 @@ Step 3-2: Calculate the $R^2$ of CafePMNets under different meta-z thresholds.
 python3 3-2_R2_CafePMNets.py –e ./PMIN/expPPI_PMIN_hyperP.txt –p ./PMIN/coexp_PMIN_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt -o ./PMIN/R2_COAD_CafePMNets.txt
 ```
 
-`-h`: Get help with the commands.
-`-e`: PMI hypergeometric enrichment result file based on experimental PPI. 
-`-p`: PMI hypergeometric enrichment result file based on gene co-expression.
-`-pp`: PPIN file.
-`-mm`: MMIN file.
-`-o`: Output file for the calculated $R^2$ values across all meta-z thresholds (can be .txt or .csv).
-`--threshold_start`: Starting meta-z threshold (default: 1.0).
-`--threshold_end`: Ending meta-z threshold (default: 9.0).
+`-h`: Get help with the commands.  
+`-e`: PMI hypergeometric enrichment result file based on experimental PPI.  
+`-p`: PMI hypergeometric enrichment result file based on gene co-expression.  
+`-pp`: PPIN file.  
+`-mm`: MMIN file.  
+`-o`: Output file for the calculated $R^2$ values across all meta-z thresholds (can be .txt or .csv).  
+`--threshold_start`: Starting meta-z threshold (default: 1.0).  
+`--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
 Step 3-3: Calculate the joint average RSS of CafePMNets under different meta-z thresholds.
@@ -183,16 +183,16 @@ Step 3-3: Calculate the joint average RSS of CafePMNets under different meta-z t
 python3 3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/expPPI_PMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./PMIN/coexp_PMIN_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt –o ./PMIN/joint_AvgRSS_COAD_CafePMNets.txt
 ```
 
-`-e`: PMI hypergeometric enrichment result file based on experimental PPI.
-`-b`: BP semantic similarity score file.
-`-c`: CC semantic similarity score file.
-`-m`: Module file.
-`-p`: PMI hypergeometric enrichment result file based on co-expression.
-`-pp`: PPIN file.
-`-mm`: MMIN file.
-`-o`: Output file containing joint average RSS values for each meta-z threshold (can be .txt or .csv).
-`--threshold_start`: Starting meta-z threshold (default: 1.0).
-`--threshold_end`: Ending meta-z threshold (default: 9.0).
+`-e`: PMI hypergeometric enrichment result file based on experimental PPI.  
+`-b`: BP semantic similarity score file.  
+`-c`: CC semantic similarity score file.  
+`-m`: Module file.  
+`-p`: PMI hypergeometric enrichment result file based on co-expression.  
+`-pp`: PPIN file.  
+`-mm`: MMIN file.  
+`-o`: Output file containing joint average RSS values for each meta-z threshold (can be .txt or .csv).  
+`--threshold_start`: Starting meta-z threshold (default: 1.0).  
+`--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
 Step 3-4: Calculate the geometric mean scores and plotting of CafePMNets under different meta-z thresholds.
@@ -201,9 +201,9 @@ Step 3-4: Calculate the geometric mean scores and plotting of CafePMNets under d
 python3 3-4_geometric_mean_plotting.py –r ./PMIN/R2_COAD_CafePMNets.txt –s ./PMIN/joint_AvgRSS_COAD_CafePMNets.txt –o ./PMIN/GM_COAD_CafePMNets.txt
 ```
 
-`-h`: Get help with the commands.
-`-r`: R² result file.
-`-s`: Average RSS result file.
+`-h`: Get help with the commands.  
+`-r`: R² result file.  
+`-s`: Average RSS result file.  
 `-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
 
 Step 3-5: Construct CafePMNets with assigned meta-z threshold.
@@ -212,11 +212,11 @@ Step 3-5: Construct CafePMNets with assigned meta-z threshold.
 python3 3-5_construct_CafePMNets.py –e ./PMIN/expPPI_PMI_hyperP.txt –p ./PMIN/coexp_PMI_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt –t 4.5 –o ./PMIN/COAD_CafePMNets.txt
 ```
 
-`-h`: Get help with the commands.
-`-e`: PMI hypergeometric enrichment result file based on experimental PPI.
-`-p`: PMI hypergeometric enrichment result file based on gene co-expression.
-`-pp`: PPIN file.
-`-mm`: MMIN file.
-`-t`: Meta-z threshold for CafePMNets construction.
+`-h`: Get help with the commands.  
+`-e`: PMI hypergeometric enrichment result file based on experimental PPI.  
+`-p`: PMI hypergeometric enrichment result file based on gene co-expression.  
+`-pp`: PPIN file.  
+`-mm`: MMIN file.  
+`-t`: Meta-z threshold for CafePMNets construction.  
 `-o`: Output CafePMNets file.
 
