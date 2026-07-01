@@ -83,7 +83,7 @@ def main():
 
     print("Calculating geometric mean...")
 
-    result_df  = calculate_geometric_mean(df_r2,df_rss)
+    result_df  = calculate_geometric_mean(df_r2,df_rss, "PPIN")
 
     save_table(result_df,args.output_file)
 
