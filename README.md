@@ -23,6 +23,8 @@ CafePMNets is a multi-scale network that modelling protein-protein, module-modul
 
 # Basic Usage
 
+Run the main script with your expression and weight files. Note that `utils.py` must be in the same directory as the main script to ensure internal functions load correctly.
+
 **Step 1: Protein-protein interaction network (PPIN) construction**
 
 The example dataset is stored in the Dataset folder, all of the example outputs are provided in the PPIN folder.
