@@ -222,3 +222,20 @@ python3 3-5_construct_CafePMNets.py –e ./PMIN/expPPI_PMI_hyperP.txt –p ./PMI
 `-t`: Meta-z threshold for CafePMNets construction.  
 `-o`: Output CafePMNets file.
 
+# Dependencies
+
+The code was developed and tested with the following software:
+
+- Python 3.12.4
+- NumPy 1.26.4
+- pandas 2.2.2
+- SciPy 1.13.1
+- NetworkX 3.2.1
+- matplotlib 3.8.4
+- seaborn 0.13.2
+
+Install all dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
