@@ -23,11 +23,11 @@ CafePMNets is a multi-scale network that modelling protein-protein, module-modul
 
 # Basic Usage
 
-Run the main script with your expression and weight files. Note that `utils.py` must be in the same directory as the main script to ensure internal functions load correctly.
+Run the main script with the data with required format. Note that `utils.py` must be in the same directory as the main script to ensure internal functions load correctly.
 
 **Step 1: Protein-protein interaction network (PPIN) construction**
 
-The example dataset is stored in the Dataset folder, all of the example outputs are provided in the PPIN folder.
+The example dataset is stored in the Dataset folder, all of the example outputs are provided in the PPIN folder. Here, we demonstrate the construction of COAD-specific CafePMNets.
 
 Step 1-1: Calculate the $R^2$ of PPIN under different PCC thresholds.
 
@@ -55,12 +55,13 @@ python3 1-2_AvgRSS_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –p .
 `--threshold_step`: PCC threshold increment (default: 0.1).
 
 Step 1-3: Calculate the geometric mean scores and plotting of PPIN under different PCC thresholds.
+(Please note that the optimal thresholds may not be the choice for PPIN construction due to the insufficient of network edges.)
 
 ```bash
 python3 1-3_geometric_mean_plotting.py –r ./PPIN/R2_COAD_PPIN.txt –s ./PPIN/AvgRSS_COAD_PPIN.txt –o ./PPIN/GM_COAD_PPIN.txt
 ```
 `-h`: Get help with the commands.  
-`-r`: R² result file.  
+`-r`: $R^2$ result file.  
 `-s`: Average RSS result file.  
 `-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
 
@@ -129,7 +130,7 @@ Step 2-4: Calculate the geometric mean scores and plotting of MMIN under differe
 python3 2-4_geometric_mean_plotting.py –r ./MMIN/R2_COAD_MMIN.txt –s ./MMIN/joint_AvgRSS_COAD_MMIN.txt –o ./MMIN/GM_COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
-`-r`: R² result file.  
+`-r`: $R^2$ result file.  
 `-s`: Average RSS result file.  
 `-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
 
