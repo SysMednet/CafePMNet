@@ -198,7 +198,7 @@ python3 3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/expPPI_PMIN_hyperP.txt –b 
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
-Step 3-4: Calculate the geometric mean scores and plotting of CafePMNets under different meta-z thresholds.
+Step 3-4: Calculate the geometric mean scores and plotting under different meta-z thresholds.
 
 ```bash
 python3 3-4_geometric_mean_plotting.py –r ./PMIN/R2_COAD_CafePMNets.txt –s ./PMIN/joint_AvgRSS_COAD_CafePMNets.txt –o ./PMIN/GM_COAD_CafePMNets.txt
