@@ -27,7 +27,7 @@ Run the main script with the data with required format. Note that `utils.py` mus
 
 **Step 1: Protein-protein interaction network (PPIN) construction**
 
-The example dataset is stored in the Dataset folder, all of the example outputs are provided in the PPIN folder. Here, we demonstrate the construction of COAD-specific CafePMNets.
+The Dataset folder contains a subset of the datasets required to run the example workflow. The remaining datasets are available on Zenodo due to their large size. Please download the complete datasets from Zenodo before running the full pipeline. All of the example outputs are provided in the PPIN folder.
 
 Step 1-1: Calculate the $R^2$ of PPIN under different PCC thresholds.
 
@@ -78,7 +78,7 @@ python3 1-4_construct_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –
 
 **Step 2: Module-module interaction network (MMIN) construction**
 
-The required datasets are stored in the Dataset folder, all of the example outputs are provided in the MMIN folder.
+The Dataset folder contains a subset of the datasets required to run the example workflow. The remaining datasets are available on Zenodo due to their large size. Please download the complete datasets from Zenodo before running the full pipeline. All of the example outputs are provided in the MMIN folder.
 
 Step 2-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each module-module pair.
 
@@ -146,6 +146,8 @@ python3 2-5_construct_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coe
 `-o`: Output MMIN file.
 
 **Step 3: Protein-module interaction network (CafePMNets) construction**
+
+The Dataset folder contains a subset of the datasets required to run the example workflow. The remaining datasets are available on Zenodo due to their large size. Please download the complete datasets from Zenodo before running the full pipeline. All of the example outputs are provided in the PMIN folder.
 
 Step 3-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each protein-module pair.
 
