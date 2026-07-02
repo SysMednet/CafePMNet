@@ -54,7 +54,7 @@ python3 1-2_AvgRSS_PPIN.py –e ./Dataset/9606_expPPI_network_ OnlyAC.txt –p .
 `--threshold_end`: Ending PCC threshold (default: 0.9).  
 `--threshold_step`: PCC threshold increment (default: 0.1).
 
-Step 1-3: Calculate the geometric mean scores and plotting of PPIN under different PCC thresholds.
+Step 1-3: Calculate the geometric mean scores and plotting under different PCC thresholds.
 (Please note that the optimal thresholds may not be the choice for PPIN construction due to the insufficient of network edges.)
 
 ```bash
@@ -124,14 +124,14 @@ python3 2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt 
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
-Step 2-4: Calculate the geometric mean scores and plotting of MMIN under different meta-z thresholds.
+Step 2-4: Calculate the geometric mean scores and plotting under different meta-z thresholds.
 
 ```bash
 python3 2-4_geometric_mean_plotting.py –r ./MMIN/R2_COAD_MMIN.txt –s ./MMIN/joint_AvgRSS_COAD_MMIN.txt –o ./MMIN/GM_COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-r`: $R^2$ result file.  
-`-s`: Average RSS result file.  
+`-s`: joint average RSS result file.  
 `-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
 
 Step 2-5: Construct MMIN with assigned meta-z threshold.
@@ -206,7 +206,7 @@ python3 3-4_geometric_mean_plotting.py –r ./PMIN/R2_COAD_CafePMNets.txt –s .
 
 `-h`: Get help with the commands.  
 `-r`: R² result file.  
-`-s`: Average RSS result file.  
+`-s`: joint average RSS result file.  
 `-o`: Output file containing geometric mean scores. A threshold selection plot with the same basename will also be generated.
 
 Step 3-5: Construct CafePMNets with assigned meta-z threshold.
