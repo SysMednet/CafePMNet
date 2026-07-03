@@ -128,6 +128,11 @@ def main():
     final_df = pd.DataFrame(result)
 
     print("Saving results...")
+
+    output_dir = os.path.dirname(args.output_file)
+
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     
     save_table(final_df,args.output_file)
 
