@@ -109,7 +109,7 @@ def main():
 
     print("Generating threshold plot...")
 
-    plot_threshold_selection(result_df,best_threshold,plot_file, "PCC threshold", show_best_line = False)
+    plot_threshold_selection(result_df,best_threshold,plot_file,"PPIN", "PCC threshold", show_best_line = False)
 
     print("Done.")
 
