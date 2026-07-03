@@ -135,6 +135,14 @@ def main():
 
     print(f"Processing {sample}")
 
+    output_dir = os.path.dirname(args.output_file)
+
+    if output_dir:
+
+        os.makedirs(output_dir, exist_ok=True)
+    
+    save_table(final_df,args.output_file)
+
     build_ppin(sample=sample,ppi_set=ppi_set,pcc_file=args.pcc,output_file=args.output_file, threshold=threshold)
 
 if __name__ == "__main__":
