@@ -101,10 +101,10 @@ The Dataset folder contains a subset of the datasets required to run the example
 Step 2-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each module-module pair.
 
 ```bash
-python3 ./MMIN/2-1_cor_expPPI_MMI_hyperP.py --mode coexpressed –m ./Dataset/ Modules.txt –n ./Dataset/COAD_PCC.txt --threshold 0.5 –o ./MMIN/output/coexp_MMI_hyperP.txt
+python3 ./MMIN/2-1_cor_expPPI_MMI_hyperP.py --mode coexpressed –m ./Dataset/Modules.txt –n ./Dataset/COAD_PCC.txt --threshold 0.5 –o ./MMIN/output/coexp_MMI_hyperP.txt
 ```
 ```bash
-python3 ./MMIN/2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_ OnlyAC.txt --threshold 0.5 –o ./MMIN/output/expPPI_MMI_hyperP.txt
+python3 ./MMIN/2-1_cor_expPPI_MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_OnlyAC.txt --threshold 0.5 –o ./MMIN/output/expPPI_MMI_hyperP.txt
 ```
 `-help`: Get help with the commands.  
 `-m`: Module file.  
@@ -170,10 +170,10 @@ The Dataset folder contains a subset of the datasets required to run the example
 Step 3-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each protein-module pair.
 
 ```bash
-python3 ./PMIN/3-1_cor_ expPPI_PMI_hyperP.py --mode coexpressed –m ./Dataset/Modules.txt –n ./Dataset/COAD_PCC.txt –k ./Dataset/9606_Uniprot_Reference_Genome.txt --threshold 0.5 –o ./PMIN/output/coexp_PMI_hyperP.txt
+python3 ./PMIN/3-1_cor_expPPI_PMI_hyperP.py --mode coexpressed –m ./Dataset/Modules.txt –n ./Dataset/COAD_PCC.txt –k ./Dataset/9606_Uniprot_Reference_Genome.txt --threshold 0.5 –o ./PMIN/output/coexp_PMI_hyperP.txt
 ```
 ```bash
-python3 ./PMIN/3-1_cor_expPPI_ PMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_OnlyAC.txt –k ./Dataset/9606_Uniprot_Reference_Genome.txt --threshold 0.5 –o ./PMIN/output/expPPI_PMI_hyperP.txt
+python3 ./PMIN/3-1_cor_expPPI_PMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_OnlyAC.txt –k ./Dataset/9606_Uniprot_Reference_Genome.txt --threshold 0.5 –o ./PMIN/output/expPPI_PMI_hyperP.txt
 ```
 
 `-help`: Get help with the commands.  
