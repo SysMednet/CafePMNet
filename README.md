@@ -1,6 +1,6 @@
-# CafePMNets
+# CafePMNet
 
-CafePMNets is a multi-scale network that modelling protein-protein, module-module and protein-module interactions. The construction of CafePMNets is comprised of three main steps:  
+CafePMNet is a framework for constructing cancer-specific multiscale network that modelling protein-protein, module-module and protein-module interactions. The construction of CafePMNet is comprised of three main steps:  
 * Step 1: Protein-protein interaction network construction 
 * Step 2: Module-module interaction network construction 
 * Step 3: Protein-module interaction network construction
