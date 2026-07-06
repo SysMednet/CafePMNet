@@ -101,10 +101,10 @@ The Dataset folder contains a subset of the datasets required to run the example
 Step 2-1: Calculate hypergeometric p-value based on experimental PPI or co-expressed gene pairs for each module-module pair.
 
 ```bash
-python3 ./MMIN/2-1_cor_expPPI_MMI_hyperP.py --mode coexpressed –m ./Dataset/ Modules.txt –n ./Dataset/COAD_PCC.txt --threshold 0.5 –o ./MMIN/output/coexp_MMIN_hyperP.txt
+python3 ./MMIN/2-1_cor_expPPI_MMI_hyperP.py --mode coexpressed –m ./Dataset/ Modules.txt –n ./Dataset/COAD_PCC.txt --threshold 0.5 –o ./MMIN/output/coexp_MMI_hyperP.txt
 ```
 ```bash
-python3 ./MMIN/2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_ OnlyAC.txt --threshold 0.5 –o ./MMIN/output/expPPI_MMIN_hyperP.txt
+python3 ./MMIN/2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt –n ./Dataset/9606_expPPI_network_ OnlyAC.txt --threshold 0.5 –o ./MMIN/output/expPPI_MMI_hyperP.txt
 ```
 `-help`: Get help with the commands.  
 `-m`: Module file.  
@@ -116,7 +116,7 @@ python3 ./MMIN/2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Module
 Step 2-2: Calculate the $R^2$ of MMIN under different meta-z thresholds.
 
 ```bash
-python3 ./MMIN/2-2_R2_MMIN.py –e ./MMIN/output/expPPI_MMIN_hyperP.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –o ./MMIN/output/R2_COAD_MMIN.txt
+python3 ./MMIN/2-2_R2_MMIN.py –e ./MMIN/output/expPPI_MMI_hyperP.txt –p ./MMIN/output/coexp_MMI_hyperP.txt –o ./MMIN/output/R2_COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -129,7 +129,7 @@ python3 ./MMIN/2-2_R2_MMIN.py –e ./MMIN/output/expPPI_MMIN_hyperP.txt –p ./M
 Step 2-3: Calculate the joint average RSS of MMIN under different meta-z thresholds.
 
 ```bash
-python3 ./MMIN/2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt –e ./MMIN/output/expPPI_MMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –o ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt
+python3 ./MMIN/2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt –e ./MMIN/output/expPPI_MMI_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./MMIN/output/coexp_MMI_hyperP.txt –o ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt
 ```
 `-k`: Experimental PPI file.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -155,7 +155,7 @@ python3 ./MMIN/2-4_geometric_mean_plotting.py –r ./MMIN/output/R2_COAD_MMIN.tx
 Step 2-5: Construct MMIN with assigned meta-z threshold.
 
 ```bash
-python3 ./MMIN/2-5_construct_MMIN.py –e ./MMIN/output/expPPI_MMIN_hyperP.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –t 7.5 –o ./MMIN/output/COAD_MMIN.txt
+python3 ./MMIN/2-5_construct_MMIN.py –e ./MMIN/output/expPPI_MMI_hyperP.txt –p ./MMIN/output/coexp_MMI_hyperP.txt –t 7.5 –o ./MMIN/output/COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -203,7 +203,7 @@ python3 ./PMIN/3-2_R2_CafePMNets.py –e ./PMIN/output/expPPI_PMI_hyperP.txt –
 Step 3-3: Calculate the joint average RSS of CafePMNets under different meta-z thresholds.
 
 ```bash
-python3 ./PMIN/3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/output/expPPI_PMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./PMIN/output/coexp_PMIN_hyperP.txt –pp ./PPIN/output/COAD_PPIN.txt –mm ./MMIN/output/COAD_MMIN.txt –o ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt
+python3 ./PMIN/3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/output/expPPI_PMI_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./PMIN/output/coexp_PMI_hyperP.txt –pp ./PPIN/output/COAD_PPIN.txt –mm ./MMIN/output/COAD_MMIN.txt –o ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt
 ```
 
 `-e`: PMI hypergeometric enrichment result file based on experimental PPI.  
