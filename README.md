@@ -76,7 +76,7 @@ Step 1-3: Calculate the geometric mean scores and plotting under different PCC t
 (Please note that the optimal thresholds may not be the choice for PPIN construction due to the insufficient of network edges.)
 
 ```bash
-python3 1-3_geometric_mean_plotting.py –r ./PPIN/R2_COAD_PPIN.txt –s ./PPIN/AvgRSS_COAD_PPIN.txt –o ./PPIN/output/GM_COAD_PPIN.txt
+python3 1-3_geometric_mean_plotting.py –r ./PPIN/output/R2_COAD_PPIN.txt –s ./PPIN/output/AvgRSS_COAD_PPIN.txt –o ./PPIN/output/GM_COAD_PPIN.txt
 ```
 `-h`: Get help with the commands.  
 `-r`: $R^2$ result file.  
@@ -116,7 +116,7 @@ python3 2-1_cor_expPPI_ MMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt �
 Step 2-2: Calculate the $R^2$ of MMIN under different meta-z thresholds.
 
 ```bash
-python3 2-2_R2_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coexp_MMIN_hyperP.txt –o ./MMIN/output/R2_COAD_MMIN.txt
+python3 2-2_R2_MMIN.py –e ./MMIN/output/expPPI_MMIN_hyperP.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –o ./MMIN/output/R2_COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -129,7 +129,7 @@ python3 2-2_R2_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coexp_MMIN
 Step 2-3: Calculate the joint average RSS of MMIN under different meta-z thresholds.
 
 ```bash
-python3 2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt –e ./MMIN/expPPI_MMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./MMIN/coexp_MMIN_hyperP.txt –o ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt
+python3 2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt –e ./MMIN/output/expPPI_MMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –o ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt
 ```
 `-k`: Experimental PPI file.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -145,7 +145,7 @@ python3 2-3_joint_AvgRSS_MMIN.txt –k ./Dataset/9606_expPPI_network_OnlyAC.txt 
 Step 2-4: Calculate the geometric mean scores and plotting under different meta-z thresholds.
 
 ```bash
-python3 2-4_geometric_mean_plotting.py –r ./MMIN/R2_COAD_MMIN.txt –s ./MMIN/joint_AvgRSS_COAD_MMIN.txt –o ./MMIN/output/GM_COAD_MMIN.txt
+python3 2-4_geometric_mean_plotting.py –r ./MMIN/output/R2_COAD_MMIN.txt –s ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt –o ./MMIN/output/GM_COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-r`: $R^2$ result file.  
@@ -155,7 +155,7 @@ python3 2-4_geometric_mean_plotting.py –r ./MMIN/R2_COAD_MMIN.txt –s ./MMIN/
 Step 2-5: Construct MMIN with assigned meta-z threshold.
 
 ```bash
-python3 2-5_construct_MMIN.py –e ./MMIN/expPPI_MMIN_hyperP.txt –p ./MMIN/coexp_MMIN_hyperP.txt –t 7.5 –o ./MMIN/output/COAD_MMIN.txt
+python3 2-5_construct_MMIN.py –e ./MMIN/output/expPPI_MMIN_hyperP.txt –p ./MMIN/output/coexp_MMIN_hyperP.txt –t 7.5 –o ./MMIN/output/COAD_MMIN.txt
 ```
 `-h`: Get help with the commands.  
 `-e`: MMI hypergeometric enrichment result file based on experimental PPI.  
@@ -187,7 +187,7 @@ python3 3-1_cor_expPPI_ PMI_hyperP.py --mode expPPI –m ./Dataset/Modules.txt �
 Step 3-2: Calculate the $R^2$ of CafePMNets under different meta-z thresholds.
 
 ```bash
-python3 3-2_R2_CafePMNets.py –e ./PMIN/expPPI_PMIN_hyperP.txt –p ./PMIN/coexp_PMIN_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt -o ./PMIN/output/R2_COAD_CafePMNets.txt
+python3 3-2_R2_CafePMNets.py –e ./PMIN/output/expPPI_PMI_hyperP.txt –p ./PMIN/output/coexp_PMI_hyperP.txt –pp ./PPIN/output/COAD_PPIN.txt –mm ./MMIN/output/COAD_MMIN.txt -o ./PMIN/output/R2_COAD_CafePMNets.txt
 ```
 
 `-h`: Get help with the commands.  
@@ -203,7 +203,7 @@ python3 3-2_R2_CafePMNets.py –e ./PMIN/expPPI_PMIN_hyperP.txt –p ./PMIN/coex
 Step 3-3: Calculate the joint average RSS of CafePMNets under different meta-z thresholds.
 
 ```bash
-python3 3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/expPPI_PMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./PMIN/coexp_PMIN_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt –o ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt
+python3 3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/output/expPPI_PMIN_hyperP.txt –b ./Dataset/ALL_PPI_BPscore.txt –c ./Dataset/ALL_PPI_CCscore.txt –m ./Dataset/Modules.txt –p ./PMIN/output/coexp_PMIN_hyperP.txt –pp ./PPIN/output/COAD_PPIN.txt –mm ./MMIN/output/COAD_MMIN.txt –o ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt
 ```
 
 `-e`: PMI hypergeometric enrichment result file based on experimental PPI.  
@@ -221,7 +221,7 @@ python3 3-3_joint_AvgRSS_CafePMNets.txt –e ./PMIN/expPPI_PMIN_hyperP.txt –b 
 Step 3-4: Calculate the geometric mean scores and plotting under different meta-z thresholds.
 
 ```bash
-python3 3-4_geometric_mean_plotting.py –r ./PMIN/R2_COAD_CafePMNets.txt –s ./PMIN/joint_AvgRSS_COAD_CafePMNets.txt –o ./PMIN/output/GM_COAD_CafePMNets.txt
+python3 3-4_geometric_mean_plotting.py –r ./PMIN/output/R2_COAD_CafePMNets.txt –s ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt –o ./PMIN/output/GM_COAD_CafePMNets.txt
 ```
 
 `-h`: Get help with the commands.  
@@ -232,7 +232,7 @@ python3 3-4_geometric_mean_plotting.py –r ./PMIN/R2_COAD_CafePMNets.txt –s .
 Step 3-5: Construct CafePMNets with assigned meta-z threshold.
 
 ```bash
-python3 3-5_construct_CafePMNets.py –e ./PMIN/expPPI_PMI_hyperP.txt –p ./PMIN/coexp_PMI_hyperP.txt –pp ./PPIN/COAD_PPIN.txt –mm ./MMIN/COAD_MMIN.txt –t 4.5 –o ./PMIN/output/COAD_CafePMNets.txt
+python3 3-5_construct_CafePMNets.py –e ./PMIN/output/expPPI_PMI_hyperP.txt –p ./PMIN/output/coexp_PMI_hyperP.txt –pp ./PPIN/output/COAD_PPIN.txt –mm ./MMIN/output/COAD_MMIN.txt –t 4.5 –o ./PMIN/output/COAD_CafePMNets.txt
 ```
 
 `-h`: Get help with the commands.  
