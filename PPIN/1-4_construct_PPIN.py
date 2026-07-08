@@ -140,8 +140,6 @@ def main():
     if output_dir:
 
         os.makedirs(output_dir, exist_ok=True)
-    
-    save_table(final_df,args.output_file)
 
     build_ppin(sample=sample,ppi_set=ppi_set,pcc_file=args.pcc,output_file=args.output_file, threshold=threshold)
 
