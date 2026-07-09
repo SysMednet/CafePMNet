@@ -65,7 +65,7 @@ def parse_args():
     parser.add_argument(
         "--threshold_end",
         type=float,
-        default=10.0
+        default=9.0
     )
 
     parser.add_argument(
