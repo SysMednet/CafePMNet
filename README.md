@@ -20,7 +20,7 @@ The code was developed and tested with the following software:
 Install all dependencies using:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 # Input File Format
