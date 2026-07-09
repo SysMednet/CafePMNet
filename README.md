@@ -57,7 +57,7 @@ python3 ./PPIN/1-1_R2_PPIN.py -e ./Dataset/9606_expPPI_network_OnlyAC.txt -p ./D
 `-p`: Gene co-expression file.  
 `-o`: Output file containing average $R^2$ values and edge counts for each PCC threshold.
 
-Step 1-2: Calculate the average RSS of PPIN under different PCC thresholds.
+Step 1-2: Calculate the joint RSS score of PPIN under different PCC thresholds.
 
 ```bash
 python3 ./PPIN/1-2_AvgRSS_PPIN.py -e ./Dataset/9606_expPPI_network_OnlyAC.txt -p ./Dataset/COAD_PCC.txt -b ./Dataset/ALL_PPI_BPscore.txt -c ./Dataset/ALL_PPI_CCscore.txt -o ./PPIN/output/AvgRSS_COAD_PPIN.txt
@@ -67,7 +67,7 @@ python3 ./PPIN/1-2_AvgRSS_PPIN.py -e ./Dataset/9606_expPPI_network_OnlyAC.txt -p
 `-p`: Gene co-expression file.  
 `-b`: BP semantic similarity score file.  
 `-c`: CC semantic similarity score file.  
-`-o`: Output file containing average RSS values and edge counts for each PCC threshold.  
+`-o`: Output file containing joint RSS scores and edge counts for each PCC threshold.  
 `--threshold_start`: Starting PCC threshold (default: 0.1).  
 `--threshold_end`: Ending PCC threshold (default: 0.9).  
 `--threshold_step`: PCC threshold increment (default: 0.1).
@@ -126,7 +126,7 @@ python3 ./MMIN/2-2_R2_MMIN.py -e ./MMIN/output/expPPI_MMI_hyperP.txt -p ./MMIN/o
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
-Step 2-3: Calculate the joint average RSS of MMIN under different meta-z thresholds.
+Step 2-3: Calculate the average joint RSS scores (AvgRSS) of MMIN under different meta-z thresholds.
 
 ```bash
 python3 ./MMIN/2-3_joint_AvgRSS_MMIN.py -k ./Dataset/9606_expPPI_network_OnlyAC.txt -e ./MMIN/output/expPPI_MMI_hyperP.txt -b ./Dataset/ALL_PPI_BPscore.txt -c ./Dataset/ALL_PPI_CCscore.txt -m ./Dataset/Modules.txt -p ./MMIN/output/coexp_MMI_hyperP.txt -o ./MMIN/output/joint_AvgRSS_COAD_MMIN.txt
@@ -137,7 +137,7 @@ python3 ./MMIN/2-3_joint_AvgRSS_MMIN.py -k ./Dataset/9606_expPPI_network_OnlyAC.
 `-c`: CC semantic similarity score file.  
 `-m`: Module file.  
 `-p`: MMI hypergeometric enrichment result file based on co-expression.  
-`-o`: Output file containing joint average RSS values for each meta-z threshold (can be .txt or .csv).  
+`-o`: Output file containing AvgRSS for each meta-z threshold (can be .txt or .csv).  
 `--threshold_start`: Starting meta-z threshold (default: 1.0).  
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
@@ -200,7 +200,7 @@ python3 ./PMIN/3-2_R2_CafePMNets.py -e ./PMIN/output/expPPI_PMI_hyperP.txt -p ./
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
 
-Step 3-3: Calculate the joint average RSS of CafePMNets under different meta-z thresholds.
+Step 3-3: Calculate the AvgRSS of CafePMNets under different meta-z thresholds.
 
 ```bash
 python3 ./PMIN/3-3_joint_AvgRSS_CafePMNets.py -e ./PMIN/output/expPPI_PMI_hyperP.txt -b ./Dataset/ALL_PPI_BPscore.txt -c ./Dataset/ALL_PPI_CCscore.txt -m ./Dataset/Modules.txt -p ./PMIN/output/coexp_PMI_hyperP.txt -pp ./PPIN/output/COAD_PPIN.txt -mm ./MMIN/output/COAD_MMIN.txt -o ./PMIN/output/joint_AvgRSS_COAD_CafePMNets.txt
@@ -213,7 +213,7 @@ python3 ./PMIN/3-3_joint_AvgRSS_CafePMNets.py -e ./PMIN/output/expPPI_PMI_hyperP
 `-p`: PMI hypergeometric enrichment result file based on co-expression.  
 `-pp`: PPIN file.  
 `-mm`: MMIN file.  
-`-o`: Output file containing joint average RSS values for each meta-z threshold (can be .txt or .csv).  
+`-o`: Output file containing AvgRSS for each meta-z threshold (can be .txt or .csv).  
 `--threshold_start`: Starting meta-z threshold (default: 1.0).  
 `--threshold_end`: Ending meta-z threshold (default: 9.0).  
 `--threshold_step`: Meta-z threshold increment (default: 0.5).
