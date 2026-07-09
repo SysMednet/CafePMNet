@@ -381,7 +381,7 @@ def main():
 
     else:
 
-        print(f"Best threshold = {best_threshold}, AvgRSS = {best_rss:.4f}")
+        print(f"Best threshold = {best_threshold}, joint average RSS = {best_rss:.4f}")
 
     # --------------------------------------------------------
     # Save results
