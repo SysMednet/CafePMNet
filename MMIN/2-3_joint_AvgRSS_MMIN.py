@@ -169,7 +169,7 @@ def main():
             {
                 "threshold": threshold,
                 "MMIN edge count": edge_count,
-                "AvgRSS": avg_rss
+                "joint average RSS": avg_rss
             }
         )
 
