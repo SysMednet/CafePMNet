@@ -11,7 +11,7 @@ def parse_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(
-        description=("Calculate average RSS values under different meta-z score thresholds.")
+        description=("Calculate joint average RSS values under different meta-z score thresholds.")
     )
 
     parser.add_argument(
@@ -191,7 +191,7 @@ def main():
 
     else:
 
-        print(f"Best threshold = {best_threshold}, AvgRSS = {best_avg_rss:.4f}")
+        print(f"Best threshold = {best_threshold}, joint average RSS = {best_avg_rss:.4f}")
 
     # --------------------------------------------------------
     # Save results
