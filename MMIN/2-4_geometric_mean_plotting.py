@@ -81,7 +81,7 @@ def main():
 
     print("Calculating geometric mean...")
 
-    result_df  = calculate_geometric_mean(df_r2,df_rss， "MMIN")
+    result_df  = calculate_geometric_mean(df_r2,df_rss,"MMIN")
 
     save_table(result_df,args.output_file)
 
