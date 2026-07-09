@@ -9,7 +9,7 @@ def parse_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(
-        description=("Calculate geometric mean scores from R² and AvgRSS results.")
+        description=("Calculate geometric mean scores from R² and joint average RSS results.")
     )
 
     parser.add_argument(
@@ -41,7 +41,7 @@ def main():
 
     Geometric mean is calculated from:
 
-        GM = sqrt(R² × AvgRSS)
+        GM = sqrt(R² × joint average RSS)
 
     The optimal threshold is determined
     as the threshold with the highest
@@ -58,7 +58,7 @@ def main():
 
     df_r2 = pd.read_csv(args.r2,sep="\t")
 
-    print("Loading AvgRSS table...")
+    print("Loading joint average RSS table...")
 
     df_rss = pd.read_csv(args.rss,sep="\t")
 
@@ -67,13 +67,13 @@ def main():
     # --------------------------------------------------
 
     required_r2 = {"threshold", "R2"}
-    required_rss = {"threshold", "AvgRSS"}
+    required_rss = {"threshold", "joint average RSS"}
 
     if not required_r2.issubset(df_r2.columns):
         raise ValueError("R² file must contain columns: threshold, R2")
 
     if not required_rss.issubset(df_rss.columns):
-        raise ValueError("AvgRSS file must contain columns: threshold, AvgRSS")
+        raise ValueError("AvgRSS file must contain columns: threshold, joint average RSS")
 
     # --------------------------------------------------
     # Calculate geometric mean
