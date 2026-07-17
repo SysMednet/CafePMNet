@@ -10,7 +10,7 @@ def parse_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(
-        description=("Calculate geometric mean scores from R² and joint average RSS results.")
+        description=("Calculate geometric mean scores from R² and AvgRSS results.")
     )
 
     parser.add_argument(
@@ -24,7 +24,7 @@ def parse_args():
         "-s",
         "--rss",
         required=True,
-        help="joint average RSS result file"
+        help="AvgRSS result file"
     )
 
     parser.add_argument(
@@ -48,7 +48,7 @@ def main():
 
     df_r2 = pd.read_csv(args.r2,sep="\t")
 
-    print("Loading joint average RSS table...")
+    print("Loading AvgRSS table...")
 
     df_rss = pd.read_csv(args.rss,sep="\t")
 
@@ -62,7 +62,7 @@ def main():
 
     if not required_rss.issubset(df_rss.columns):
 
-        raise ValueError("joint avgRSS file must contain columns: threshold, joint average RSS")
+        raise ValueError("AvgRSS file must contain columns: threshold, joint average RSS")
 
     print("Calculating geometric mean...")
 
@@ -80,7 +80,7 @@ def main():
 
     print("Generating threshold plot...")
 
-    plot_threshold_selection(result_df,best_threshold,plot_file, "meta-z threshold")
+    plot_threshold_selection(result_df,best_threshold,plot_file, network_type = "CafePMNet", threshold_name="meta-z threshold")
 
     print("Done.")
 
