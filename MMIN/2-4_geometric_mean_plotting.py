@@ -93,7 +93,7 @@ def main():
 
     print("Generating threshold plot...")
 
-    plot_threshold_selection(result_df,best_threshold,plot_file, "meta-z score")
+    plot_threshold_selection(result_df,best_threshold,plot_file,network_type = "MMIN", threshold_name ="meta-z score")
 
     print("Done.")
 
