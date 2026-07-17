@@ -92,9 +92,9 @@ def load_pmi_zscore(filename):
 def build_pmin(ppin_file, mmin_file,exp_pmi,cor_pmi,threshold,output_file):
 
     """
-    Construct CafePMIN network.
+    Construct CafePMNet.
 
-    CafePMIN consists of:
+    CafePMNet consists of:
 
         PPIN
       + MMIN
