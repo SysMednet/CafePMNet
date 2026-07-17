@@ -70,16 +70,16 @@ def parse_args():
 
 def main():
     """
-    Calculate average RSS values for threshold-dependent PPINs.
+    Calculate joint RSS values for threshold-dependent PPINs.
 
     Experimentally validated PPIs are filtered according to a series of
-    user-defined PCC thresholds. For each threshold, the average
+    user-defined PCC thresholds. For each threshold, the joint
     Relative Specificity Similarity (RSS) score of retained PPIs is
     calculated.
 
     Output
     ------
-    A table containing the AvgRSS value calculated for each evaluated PCC threshold.
+    A table containing the joint RSS value calculated for each evaluated PCC threshold.
     """
     args = parse_args()
 
