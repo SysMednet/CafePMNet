@@ -10,7 +10,7 @@ def parse_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(
-        description=("Calculate average RSS values under different PCC thresholds.")
+        description=("Calculate joint RSS values under different PCC thresholds.")
     )
 
     parser.add_argument(
