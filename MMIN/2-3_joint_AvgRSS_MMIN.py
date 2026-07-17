@@ -11,7 +11,7 @@ def parse_args():
     Parse command-line arguments.
     """
     parser = argparse.ArgumentParser(
-        description=("Calculate joint average RSS values under different meta-z score thresholds.")
+        description=("Calculate AvgRSS values under different meta-z score thresholds.")
     )
 
     parser.add_argument(
